@@ -1,0 +1,96 @@
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 1fr 10vh;
+}
+.header, 
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.singIn,
+.addBook{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.main{
+    height: 100%;
+    
+    display: grid;
+    grid-template-rows: 10vh 10vh 1fr;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 3rem;
+    text-align: center;
+}
+.addBook{
+    width: 20%;
+    height: 60%;
+    gap: 20px;
+    align-self: center;
+}
+.addBook i{
+    color: var(--colorWhite);
+}
+.cardContainer{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px; 
+
+    background-color: var(--colorWhitePure);
+    border-radius: 10px;
+    padding: 20px;
+}
+.card{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    background-color: var(--colorWhite);
+    box-shadow: 0 0 10px var(--colorBlack);
+}
+.card__isreadContainer{
+    display: flex;
+    gap: 20px;
+}
+.card__button{
+    padding: 10px;
+    background-color: var(--colorWhitePure);
+}
+.read{
+    background-color: var(--colorGreen);
+
+    color: var(--colorWhitePure);
+}
+.unread{
+    background-color: var(--colorWhitePure);
+    opacity: .2;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer>a{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,36 @@
+:root{
+    --colorGreen:#28A745;
+    --colorRed:#DC3545;
+    --colorBlue:#003366;
+    --colorWhite:#F8F8F0;
+    --colorBlack:#2D2A26;
+    --colorGrey:#D3D3D3;
+    --colorWhitePure:#FFFFFF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--colorBlack);
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+    overflow: hidden;
+}
+h1,h2,h3,h4,h5{
+    font-family:'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--colorWhite);
+    padding-inline: 10vw;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border-radius: 10px;
+    cursor: pointer;
+}
+button{
+    border: none;
+}
