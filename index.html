@@ -30,28 +30,29 @@
             </div> -->
         </section>
         <div class="modalContainer">
-            <form class="form">
-                <div class="formGroup">
+            <form class="form" novalidate>
+                <button class="form__exit" type="button"><i class="fa-regular fa-circle-xmark"></i></button>
+                <div class="form__group">
                     <label for="bookName">Book Title</label>
-                    <input type="text" id="bookName" class="formGroup__input" required>
-                    <p class="formGroup__error"></p>
+                    <input type="text" id="bookName" class="form__input" required>
+                    <p class="form__error"></p>
                 </div>
-                <div class="form-group">
+                <div class="form__group">
                     <label for="author">Author</label>
-                    <input type="text" id="author" class="formGroup__input" required>
-                    <p class="formGroup__error"></p>
+                    <input type="text" id="author" class="form__input" required>
+                    <p class="form__error"></p>
                 </div>
-                <div class="form-group">
+                <div class="form__group">
                     <label for="pages">Pages</label>
-                    <input type="text" id="pages" class="formGroup__input" required>
-                    <p class="formGroup__error"></p>
+                    <input type="text" id="pages" class="form__input" required>
+                    <p class="form__error"></p>
                 </div>
-                <div class="form-check">
+                <div class="form__check">
                     <label for="isRead">Is Read?</label>
-                    <input type="checkbox" id="isRead" class="custom-checkbox formGroup__input">
-                    <p class="formGroup__error"></p>
+                    <input type="checkbox" id="isRead" class="custom-checkbox form__input">
+                    <p class="form__error"></p>
                 </div>                
-                <button type="submit">Add Book</button>
+                <button type="submit" class="form__submit">Add Book</button>
             </form>
         </div>
     </main>
