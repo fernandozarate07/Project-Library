@@ -32,6 +32,9 @@ body{
     align-items: center;
     border-radius: 10px;
 }
+.singIn:hover{
+    background-color:var(--colorHover);
+}
 .title{
     font-size: 3rem;
     text-align: center;
@@ -117,13 +120,12 @@ body{
     top: 0;
     left: 0;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
 }
 .form{
     padding: 20px;
@@ -138,7 +140,7 @@ body{
     border-radius: 10px;
 
 }
-.form-group {
+.formGroup {
     margin-bottom: 15px;
 }
 
@@ -166,12 +168,14 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     background-color: var(--colorBlue);
-    color: white;
+    color: var(--colorWhite);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-
-button:hover {
-    background-color: #0056b3;
+.visible{
+    display: flex;
+}
+.Invisible{
+    display: none;
 }

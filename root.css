@@ -6,6 +6,8 @@
     --colorBlack:#2D2A26;
     --colorGrey:#D3D3D3;
     --colorWhitePure:#FFFFFF;
+    --colorHover:#0056b3;
+
 }
 *{
     margin: 0;
@@ -33,4 +35,7 @@ button{
 }
 button{
     border: none;
+}
+button:hover{
+    background-color:var(--colorHover)
 }

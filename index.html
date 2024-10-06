@@ -17,7 +17,7 @@
     </header>
     <main class="main">
         <h1 class="title">MY BOOK <i class="fa-regular fa-bookmark"></i></h1>
-        <button class="addBook"><i class="fa-solid fa-plus hola"></i> Add Book</button>
+        <button class="addBook"><i class="fa-solid fa-plus"></i> Add Book</button>
         <section class="cardContainer">
             <!-- <div class="card">
                 <h3 class="card__title">" HARRY POTTER "</h3>
@@ -31,21 +31,25 @@
         </section>
         <div class="modalContainer">
             <form class="form">
-                <div class="form-group">
+                <div class="formGroup">
                     <label for="bookName">Book Title</label>
-                    <input type="text" id="bookName" required>
+                    <input type="text" id="bookName" class="formGroup__input" required>
+                    <p class="formGroup__error"></p>
                 </div>
                 <div class="form-group">
                     <label for="author">Author</label>
-                    <input type="text" id="author" required>
+                    <input type="text" id="author" class="formGroup__input" required>
+                    <p class="formGroup__error"></p>
                 </div>
                 <div class="form-group">
                     <label for="pages">Pages</label>
-                    <input type="text" id="pages" required>
+                    <input type="text" id="pages" class="formGroup__input" required>
+                    <p class="formGroup__error"></p>
                 </div>
                 <div class="form-check">
                     <label for="isRead">Is Read?</label>
-                    <input type="checkbox" id="isRead" class="custom-checkbox">
+                    <input type="checkbox" id="isRead" class="custom-checkbox formGroup__input">
+                    <p class="formGroup__error"></p>
                 </div>                
                 <button type="submit">Add Book</button>
             </form>
