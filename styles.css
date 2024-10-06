@@ -89,13 +89,13 @@ body{
 }
 /* var class */
 .read{
-    background-color: var(--colorGreen);
+    background-color: var(--colorBlue);
 
     color: var(--colorWhitePure);
 }
 .unread{
-    background-color: var(--colorWhitePure);
-    opacity: .2;
+    background-color: var(--colorGrey);
+    opacity: .5;
 }
 /* footer */
 .footer{

@@ -25,6 +25,7 @@ formExit.addEventListener('click', () => {
 let form = document.querySelector('.form');
 let inputs = document.querySelectorAll('.form__input');
 let formError = document.querySelectorAll('.form__error');
+let cardContainer = document.querySelector('.cardContainer');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -48,12 +49,60 @@ form.addEventListener('submit', (e) => {
     }
 
     if (isValidate === true) {
-        let name = inputs[0].value;
+        let name = inputs[0].value.toUpperCase();
         let autor = inputs[1].value;
-        let pag = inputs[2].value;
-        let isRead = inputs[3].checked;
+        let page = inputs[2].value;
+        let isread = inputs[3].checked;
 
-        const book = new Book(name, autor, pag, isRead);
+        const book = new Book(name, autor, page, isread);
         console.log(book);
+
+        // Create Component
+        function getComponent(objet) {
+            let card = document.createElement('div');
+            card.classList.add('card');
+            cardContainer.appendChild(card);
+
+            let title = document.createElement('h3');
+            title.textContent = ` "${objet.name}"`;
+            title.classList.add('card__title');
+            card.appendChild(title);
+
+            let autorTitle = document.createElement('p');
+            autorTitle.textContent = objet.autor;
+            autorTitle.classList.add('card__p');
+            card.appendChild(autorTitle);
+
+            let pageNumber = document.createElement('p');
+            pageNumber.textContent = ` Has ${objet.pag} pages`;
+            card.appendChild(pageNumber);
+
+            let isreadContainer = document.createElement('div');
+            isreadContainer.classList.add('card__isreadContainer');
+            card.appendChild(isreadContainer);
+
+            let readBtn = document.createElement('button');
+            readBtn.textContent = 'Read';
+            readBtn.classList.add('card__button');
+            if (isread === true) {
+                readBtn.classList.add('read');
+                card.style.boxShadow = `0 0 10px var(--colorGreen)`;
+            } else {
+                readBtn.classList.add('unread');
+                card.style.boxShadow = `0 0 10px var(--colorRed)`;
+            }
+            isreadContainer.appendChild(readBtn);
+
+            let unreadBtn = document.createElement('button');
+            unreadBtn.textContent = 'Unread';
+            unreadBtn.classList.add('card__button');
+            if (isread) {
+                unreadBtn.classList.add('unread');
+            } else {
+                unreadBtn.classList.add('read');
+            }
+            isreadContainer.appendChild(unreadBtn);
+        }
+        getComponent(book);
     }
 });
