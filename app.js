@@ -1,3 +1,4 @@
+const books = [];
 // Constructor
 function Book(name, autor, pag, isread) {
     this.name = name;
@@ -47,7 +48,7 @@ form.addEventListener('submit', (e) => {
             isValidate = false;
         }
     }
-
+    // Create Objet
     if (isValidate === true) {
         let name = inputs[0].value.toUpperCase();
         let autor = inputs[1].value;
@@ -55,8 +56,11 @@ form.addEventListener('submit', (e) => {
         let isread = inputs[3].checked;
 
         const book = new Book(name, autor, page, isread);
-        console.log(book);
 
+        books.push(book);
+
+        console.log(book);
+        console.log(books);
         // Create Component
         function getComponent(objet) {
             let card = document.createElement('div');
@@ -86,22 +90,26 @@ form.addEventListener('submit', (e) => {
             readBtn.classList.add('card__button');
             if (isread === true) {
                 readBtn.classList.add('read');
-                card.style.boxShadow = `0 0 10px var(--colorGreen)`;
             } else {
                 readBtn.classList.add('unread');
-                card.style.boxShadow = `0 0 10px var(--colorRed)`;
             }
             isreadContainer.appendChild(readBtn);
 
             let unreadBtn = document.createElement('button');
             unreadBtn.textContent = 'Unread';
             unreadBtn.classList.add('card__button');
+
             if (isread) {
                 unreadBtn.classList.add('unread');
             } else {
                 unreadBtn.classList.add('read');
             }
             isreadContainer.appendChild(unreadBtn);
+
+            let deleteBtn = document.createElement('button');
+            deleteBtn.textContent ='Delete';
+            deleteBtn.classList.add('card__delete');
+            card.appendChild(deleteBtn);
         }
         getComponent(book);
     }

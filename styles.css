@@ -24,25 +24,27 @@ body{
 .addBook{
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: var(--colorBlue);
-    color: var(--colorWhite);
     
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+
+    background-color: var(--colorWhitePure);
+    color: var(--colorBlue);
 }
 .singIn:hover{
     background-color:var(--colorHover);
+    color: var(--colorWhite);
 }
 .title{
     font-size: 3rem;
     text-align: center;
-    color: var(--colorBlue);
+    color: var(--colorWhitePure);
 }
 .title>i{
     font-size: 2.1rem;
-    color: var(--colorBlue);
+    color: var(--colorWhitePure);
 }
 .addBook{
     width: 15%;
@@ -51,7 +53,10 @@ body{
     align-self: center;
 }
 .addBook i{
-    color: var(--colorWhite);
+    color: var(--colorBlue);
+}
+.addBook:hover>i{
+    color:var(--colorWhitePure);
 }
 /* card */
 .cardContainer{
@@ -62,21 +67,21 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px; 
 
-    background-color: var(--colorWhitePure);
+    background-color: var(--colorGrey);
     border-radius: 10px;
     padding: 20px;
 }
 .card{
     width: 200px;
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 
     border-radius: 10px;
-    background-color: var(--colorWhite);
+    background-color: var(--colorWhitePure);
     box-shadow: 0 0 10px var(--colorBlack);
 }
 .card__isreadContainer{
@@ -86,6 +91,19 @@ body{
 .card__button{
     padding: 10px;
     background-color: var(--colorWhitePure);
+}
+.card__delete{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-self:center;
+
+    background-color: var(--colorGrey);
+    color: var(--colorRed);
+}
+.card__delete:hover{
+    background-color:var(--colorRed);
+    color: var(--colorWhitePure);
 }
 /* var class */
 .read{
@@ -187,8 +205,6 @@ input[type="text"] {
 }
 button {
     padding: 10px 15px;
-    background-color: var(--colorBlue);
-    color: var(--colorWhite);
     border: none;
     border-radius: 5px;
     cursor: pointer;
