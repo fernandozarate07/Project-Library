@@ -25,6 +25,7 @@ function getComponent(objet) {
     card.appendChild(isreadContainer);
 
     let readBtn = document.createElement('button');
+    readBtn.setAttribute('type', 'button');
     readBtn.textContent = 'Read';
     readBtn.classList.add('card__button');
     if (objet.isread === true) {
@@ -35,6 +36,7 @@ function getComponent(objet) {
     isreadContainer.appendChild(readBtn);
 
     let unreadBtn = document.createElement('button');
+    unreadBtn.setAttribute('type', 'button');
     unreadBtn.textContent = 'Unread';
     unreadBtn.classList.add('card__button');
 
@@ -44,11 +46,45 @@ function getComponent(objet) {
         unreadBtn.classList.add('read');
     }
     isreadContainer.appendChild(unreadBtn);
+    // listener de button
+    readBtn.addEventListener('click', ()=>{
+        if(objet.isread === false){
+            readBtn.classList.remove('unread')
+            readBtn.classList.add('read');
+            unreadBtn.classList.remove('read')
+            unreadBtn.classList.add('unread');
+            objet.isread = true;
+            
+        }
+    })
+    unreadBtn.addEventListener('click', ()=>{
+        if(objet.isread === true){
+            unreadBtn.classList.remove('unread')
+            unreadBtn.classList.add('read');
+            readBtn.classList.remove('read')
+            readBtn.classList.add('unread');
+            objet.isread = false;
+        }
+    })
 
     let deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
+    deleteBtn.setAttribute('type', 'button');
     deleteBtn.classList.add('card__delete');
     card.appendChild(deleteBtn);
+
+    // Delete card
+    deleteBtn.addEventListener('click', ()=>{
+        const index = books.indexOf(objet);
+        if (index > -1) {
+            books.splice(index, 1);  
+        }
+        cardContainer.textContent = '';
+        for (let e of books) {
+        let card = getComponent(e);
+        cardContainer.appendChild(card);
+    }
+})
 
     return card;
 }
@@ -86,6 +122,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let isValidate = true;
 
+    // Validate form
     for (let errorPara of formError) {
         errorPara.textContent = '';
     }
@@ -132,3 +169,4 @@ form.addEventListener('submit', (e) => {
         modalContainer.classList.add('invisible');
     }
 });
+
